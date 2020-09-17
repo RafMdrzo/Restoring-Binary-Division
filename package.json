@@ -1,0 +1,25 @@
+{
+  "name": "csarch2_simul",
+  "version": "1.0.0",
+  "description": "CSARCH2 Simulation Project of Restoring Binary Division",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "supervisor": "^0.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RafMdrzo/Restoring-Binary-Division.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RafMdrzo/Restoring-Binary-Division/issues"
+  },
+  "homepage": "https://github.com/RafMdrzo/Restoring-Binary-Division#readme",
+  "devDependencies": {}
+}

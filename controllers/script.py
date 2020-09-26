@@ -72,7 +72,7 @@ def restoringDivision(Q, M, A):
     while (count):
 
         # Printing the values at every step
-        print ("\nstep:", len(M)-count + 1, end = '')
+        print ("Step:", len(M)-count, end = '')
 
         # Step1: Left Shift, assigning LSB of Q
         # to MSB of A.
@@ -117,7 +117,7 @@ def restoringDivision(Q, M, A):
     # Printing the final quotient
     # and remainder of the given
     # dividend and divisor.
-    print ('\nQuotient(Q):', Q,
+    print ('Quotient(Q):', Q,
            ' Remainder(A):', A)
 
 

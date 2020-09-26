@@ -1,5 +1,4 @@
 var {PythonShell} = require('python-shell');
-var pyshell = new PythonShell('./controllers/script.py');
 
 const divisionController = {
   divide: async function (req, res) {

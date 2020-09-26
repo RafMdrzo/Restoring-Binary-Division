@@ -22,9 +22,10 @@ $(document).ready(function(){
           $("center.container").append(
             '<div class = "page-header"><h1>Solution</h1></div>');
           $(".row" + row).append(
-            '<div class = "solution card" style="width: 18rem;">\n<div class = "card-body">' +
-            '<h5 class = "card-title">Initialization</h5>' + '\n' +
-            '<h6 class = "card-subtitle mb-2 text-muted">Q gets dividend. M gets divisor. A is 0.</h6>' +
+            '<div class = "solution card bg-light">\n' +
+            '<div class = "card-header">Initialization</div>' + '\n' +
+            '<div class = "card-body">' +
+            '<h5 class = "card-title">Q gets dividend. M gets divisor. A is 0.</h5>' +
             '<p class = "card-text">' + answer[0] + '</p>' + '\n' +
             '<p class = "card-text">' + answer[1] + '</p>' + '\n' +
             '<p class = "card-text">' + answer[2] + '</p>' + '\n' +
@@ -34,9 +35,10 @@ $(document).ready(function(){
             i = index;
 
           $(".row" + row).append(
-            '<div class = "solution card" style="width: 18rem;">\n<div class = "card-body">' +
-            '<h5 class = "card-title">' + 'Step ' + 1 + ' </h5>' + '\n' +
-            '<h6 class = "card-subtitle mb-2 text-muted">' + answer[i + 1] + '</h6>' +
+            '<div class = "solution card bg-light">\n' +
+            '<div class="card-header">' + 'Step ' + 1 + ' </div>' + '\n' +
+            '<div class = "card-body">' +
+            '<h5 class = "card-title">' + answer[i + 1] + '</h5>' +
             '<p class = "card-text">' + answer[i + 2] + '</p>' + '\n' +
             '<p class = "card-text">' + answer[i + 3] + '</p>' + '\n' +
             '</div>\n</div>\n</div>');
@@ -46,9 +48,10 @@ $(document).ready(function(){
       }
       else if(answer.length - 1 < index + 3) {
         $(".row" + row).append(
-          '<div class = "solution card" style="width: 18rem;">\n<div class = "card-body">' +
-          '<h5 class = "card-title">' + 'Answer' + ' </h5>' + '\n' +
-          '<h6 class = "card-subtitle mb-2 text-muted">' + answer[0] + '</h6>' +
+          '<div class = "solution card bg-light">\n' +
+          '<div class="card-header">Answer</div>' + '\n' +
+          '<div class = "card-body">' +
+          '<h5 class = "card-title">' + answer[0] + '</h5>' +
           '<p class = "card-text">' + answer[i + 1] + '</p>' + '\n' +
           '<p class = "card-text">' + answer[i + 2] + '</p>' + '\n' +
           '</div>\n</div>');
@@ -57,9 +60,10 @@ $(document).ready(function(){
       }
       else {
         $(".row" + row).append(
-          '<div class = "solution card" style="width: 18rem;">\n<div class = "card-body">' +
-          '<h5 class = "card-title">' + 'Step ' + step + ' </h5>' + '\n' +
-          '<h6 class = "card-subtitle mb-2 text-muted">' + answer[i + 1] + '</h6>' +
+          '<div class = "solution card bg-light">\n' +
+          '<div class="card-header">' + 'Step ' + step + ' </div>' + '\n' +
+          '<div class = "card-body">' +
+          '<h5 class = "card-title">' + answer[i + 1] + '</h5>' +
           '<p class = "card-text">' + answer[i + 2] + '</p>' + '\n' +
           '<p class = "card-text">' + answer[i + 3] + '</p>' + '\n' +
           '</div>\n</div>');
@@ -122,9 +126,10 @@ $(document).ready(function(){
             $("center.container").append(
               '<div class = "page-header"><h1>Solution</h1></div>');
             $(".row" + row).append(
-              '<div class = "solution card" style="width: 18rem;">\n<div class = "card-body">' +
-              '<h5 class = "card-title">Initialization</h5>' + '\n' +
-              '<h6 class = "card-subtitle mb-2 text-muted">Q gets dividend. M gets divisor. A is 0.</h6>' +
+              '<div class = "solution card bg-light">\n' +
+              '<div class = "card-header">Initialization</div>' + '\n' +
+              '<div class = "card-body">' +
+              '<h5 class = "card-title">Q gets dividend. M gets divisor. A is 0.</h5>' +
               '<p class = "card-text">' + answer[0] + '</p>' + '\n' +
               '<p class = "card-text">' + answer[1] + '</p>' + '\n' +
               '<p class = "card-text">' + answer[2] + '</p>' + '\n' +
@@ -134,9 +139,10 @@ $(document).ready(function(){
               i = index;
 
             $(".row" + row).append(
-              '<div class = "solution card" style="width: 18rem;">\n<div class = "card-body">' +
-              '<h5 class = "card-title">' + 'Step ' + 1 + ' </h5>' + '\n' +
-              '<h6 class = "card-subtitle mb-2 text-muted">' + answer[i + 1] + '</h6>' +
+              '<div class = "solution card bg-light">\n' +
+              '<div class="card-header">' + 'Step ' + 1 + ' </div>' + '\n' +
+              '<div class = "card-body">' +
+              '<h5 class = "card-title">' + answer[i + 1] + '</h5>' +
               '<p class = "card-text">' + answer[i + 2] + '</p>' + '\n' +
               '<p class = "card-text">' + answer[i + 3] + '</p>' + '\n' +
               '</div>\n</div>\n</div>');
@@ -145,9 +151,10 @@ $(document).ready(function(){
           }
           else if(answer.length - 1 < index + 3) {
             $(".row" + row).append(
-              '<div class = "solution card" style="width: 18rem;">\n<div class = "card-body">' +
-              '<h5 class = "card-title">' + 'Answer' + ' </h5>' + '\n' +
-              '<h6 class = "card-subtitle mb-2 text-muted">' + answer[0] + '</h6>' +
+              '<div class = "solution card bg-light">\n' +
+              '<div class="card-header">Answer</div>' + '\n' +
+              '<div class = "card-body">' +
+              '<h5 class = "card-title">' + answer[0] + '</h5>' +
               '<p class = "card-text">' + answer[i + 1] + '</p>' + '\n' +
               '<p class = "card-text">' + answer[i + 2] + '</p>' + '\n' +
               '</div>\n</div>');
@@ -156,9 +163,10 @@ $(document).ready(function(){
           }
           else {
             $(".row" + row).append(
-              '<div class = "solution card" style="width: 18rem;">\n<div class = "card-body">' +
-              '<h5 class = "card-title">' + 'Step ' + step + ' </h5>' + '\n' +
-              '<h6 class = "card-subtitle mb-2 text-muted">' + answer[i + 1] + '</h6>' +
+              '<div class = "solution card bg-light">\n' +
+              '<div class="card-header">' + 'Step ' + step + ' </div>' + '\n' +
+              '<div class = "card-body">' +
+              '<h5 class = "card-title">' + answer[i + 1] + '</h5>' +
               '<p class = "card-text">' + answer[i + 2] + '</p>' + '\n' +
               '<p class = "card-text">' + answer[i + 3] + '</p>' + '\n' +
               '</div>\n</div>');

@@ -95,11 +95,11 @@ def restoringDivision(Q, M, A):
             # and the quotient bit
             # will be '0'
             Q = Q[1:] + '0'
-            print ('  -Unsuccessful')
+            print ('  -> Unsuccessful')
 
             # Restoration of A is required
             A = add(A, M)
-            print ('A:', A, ' Q:', Q, ' -Restoration')
+            print ('A:', A, ' Q:', Q, ' -> Restoration')
 
         else:
 
@@ -107,11 +107,11 @@ def restoringDivision(Q, M, A):
             # and the quotient bit
             # will be '1'
             Q = Q[1:] + '1'
-            print (' Successful')
+            print (' -> Successful')
 
             # No Restoration of A.
             print ('A:', A, ' Q:',
-                   Q, ' -No Restoration')
+                   Q, ' -> No Restoration')
         count -= 1
 
     # Printing the final quotient

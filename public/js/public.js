@@ -49,6 +49,7 @@ $(document).ready(function(){
           '<h5 class = "card-title">' + 'Answer' + ' </h5>' + '\n' +
           '<h6 class = "card-subtitle mb-2 text-muted">' + answer[0] + '</h6>' +
           '<p class = "card-text">' + answer[i + 1] + '</p>' + '\n' +
+          '<p class = "card-text">' + answer[i + 2] + '</p>' + '\n' +
           '</div>\n</div>');
 
         counter += 1;
@@ -65,7 +66,7 @@ $(document).ready(function(){
           counter += 1;
       }
 
-      if(((answer.length - 4) / 3) + 1 == step) {
+      if(((answer.length - 5) / 3) + 1 == step) {
         $("#divide-sbs").attr('disabled', 'true');
       }
 
@@ -148,6 +149,7 @@ $(document).ready(function(){
               '<h5 class = "card-title">' + 'Answer' + ' </h5>' + '\n' +
               '<h6 class = "card-subtitle mb-2 text-muted">' + answer[0] + '</h6>' +
               '<p class = "card-text">' + answer[i + 1] + '</p>' + '\n' +
+              '<p class = "card-text">' + answer[i + 2] + '</p>' + '\n' +
               '</div>\n</div>');
 
             counter += 1;
@@ -164,7 +166,7 @@ $(document).ready(function(){
               counter += 1;
           }
 
-          if(((answer.length - 4) / 3) + 1 == step) {
+          if(((answer.length - 5) / 3) + 1 == step) {
             $("#divide-sbs").attr('disabled', 'true');
           }
 

@@ -118,7 +118,7 @@ def restoringDivision(Q, M, A):
     # and remainder of the given
     # dividend and divisor.
     print ('Quotient(Q):', Q,
-           ' Remainder(A):', A)
+           '\nRemainder(A):', A)
 
 
 if __name__ == '__main__':

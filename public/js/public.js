@@ -88,11 +88,12 @@ $(document).ready(function(){
     step = 1;
     row = 0
     counter = 0;
-    answer = [];
+    answer.length = 0;
     i = 0;
 
     $(".solution").remove();
     $(".page-header").remove();
+    $(".card-deck").remove();
     $("#divide-sbs").show();
     $("#divide-sbs").removeAttr('disabled');
     $("#divide-sbs").html('Step-by-step');

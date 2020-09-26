@@ -1,3 +1,14 @@
 #div-op{
     text-align: center;
 }
+
+.card{
+  max-width: 300px;
+  height: 300px;
+}
+
+#SBS-solution-box, #skip-solution-box{
+  margin: 0 auto;
+  width: 90%;
+  overflow-x: none;
+}

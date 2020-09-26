@@ -64,8 +64,8 @@ def restoringDivision(Q, M, A):
     # Printing the initial values
     # of the accumulator, dividend
     # and divisor
-    print ('Initial Values: A:', A,
-           ' Q:', Q, ' M:', M)
+    print ('A:', A,
+           '\nQ:', Q, '\nM:', M)
 
     # The number of steps is equal to the
     # length of the binary number

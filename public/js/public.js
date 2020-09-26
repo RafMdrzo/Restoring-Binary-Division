@@ -10,6 +10,20 @@ $(document).ready(function(){
     if(index == 0) {
       $.get('/divide', {dividend: dividend, divisor: divisor}, function(result){
         answer = result;
+        $("center.container").append(
+          '<div class = "page-header"><h1>Solution</h1></div>');
+        $("#SBS-solution-box").append(
+          '<div class = "solution card" style="width: 18rem;">\n<div class = "card-body">' +
+          '<h5 class = "card-title">Initialization</h5>' + '\n' +
+          '<h6 class = "card-subtitle mb-2 text-muted">Q gets dividend. M gets divisor. A is 0.</h6>' +
+          '<p class = "card-text">' + answer[0] + '</p>' + '\n' +
+          '<p class = "card-text">' + answer[1] + '</p>' + '\n' +
+          '<p class = "card-text">' + answer[2] + '</p>' + '\n' +
+          '</div>\n</div>\n</div>');
+
+          index += 2;
+          i = index;
+
         $("#SBS-solution-box").append(
           '<div class = "solution card" style="width: 18rem;">\n<div class = "card-body">' +
           '<h5 class = "card-title">' + 'Step ' + 1 + ' </h5>' + '\n' +
@@ -37,13 +51,13 @@ $(document).ready(function(){
         '</div>\n</div>');
     }
 
-    if(((answer.length - 2) / 3) + 1 == step) {
-      $("#divide-sbs").attr('id', 'clear');
-      $("#divide-sbs").html('Clear');
+    if(((answer.length - 4) / 3) + 1 == step) {
+      $("#divide-sbs").attr('disabled', 'true');
     }
-    else {
-      $("#divide-sbs").html('Next');
-    }
+
+    $("#divide-sbs").html('Next');
+    $("#divide-skip").html('Clear');
+    $("#divide-skip").attr('id', 'clear');
 
     index += 3;
     step += 1;
@@ -55,8 +69,14 @@ $(document).ready(function(){
     answer = [];
 
     $(".solution").remove();
-    $("#clear").html('Divide (Step-by-Step)');
-    $("#clear").attr('id', 'divide-sbs');
+    $(".page-header").remove();
+    $("#divide-sbs").show();
+    $("#divide-sbs").html('Step-by-step');
+    $("#clear").html('Skip to Final Answer');
+    $("#clear").attr('id', 'divide-skip');
+    $("#dividend").val('');
+    $("#divisor").val('');
+    $
   });
 
   $(document).on('click', '#divide-skip', function(e){
@@ -68,17 +88,34 @@ $(document).ready(function(){
       answer = result;
 
       for(i = 0; i <= answer.length - 1; i +=3 ) {
-        if(i == 0) {
-          $("#skip-solution-box").append(
-            '<div class = "solution card" style="width: 18rem;">\n<div class = "card-body">' +
-            '<h5 class = "card-title">' + 'Step ' + 1 + ' </h5>' + '\n' +
-            '<h6 class = "card-subtitle mb-2 text-muted">' + answer[i + 1] + '</h6>' +
-            '<p class = "card-text">' + answer[i + 2] + '</p>' + '\n' +
-            '<p class = "card-text">' + answer[i + 3] + '</p>' + '\n' +
-            '</div>\n</div>\n</div>');
+        if(index == 0) {
+          $.get('/divide', {dividend: dividend, divisor: divisor}, function(result){
+            answer = result;
+            $("center.container").append(
+              '<div class = "page-header"><h1>Solution</h1></div>');
+            $("#SBS-solution-box").append(
+              '<div class = "solution card" style="width: 18rem;">\n<div class = "card-body">' +
+              '<h5 class = "card-title">Initialization</h5>' + '\n' +
+              '<h6 class = "card-subtitle mb-2 text-muted">Q gets dividend. M gets divisor. A is 0.</h6>' +
+              '<p class = "card-text">' + answer[0] + '</p>' + '\n' +
+              '<p class = "card-text">' + answer[1] + '</p>' + '\n' +
+              '<p class = "card-text">' + answer[2] + '</p>' + '\n' +
+              '</div>\n</div>\n</div>');
+
+              index += 2;
+              i = index;
+
+            $("#SBS-solution-box").append(
+              '<div class = "solution card" style="width: 18rem;">\n<div class = "card-body">' +
+              '<h5 class = "card-title">' + 'Step ' + 1 + ' </h5>' + '\n' +
+              '<h6 class = "card-subtitle mb-2 text-muted">' + answer[i + 1] + '</h6>' +
+              '<p class = "card-text">' + answer[i + 2] + '</p>' + '\n' +
+              '<p class = "card-text">' + answer[i + 3] + '</p>' + '\n' +
+              '</div>\n</div>\n</div>');
+          });
         }
         else if(answer.length - 1 < index + 3) {
-          $("#skip-solution-box").append(
+          $("#SBS-solution-box").append(
             '<div class = "solution card" style="width: 18rem;">\n<div class = "card-body">' +
             '<h5 class = "card-title">' + 'Answer' + ' </h5>' + '\n' +
             '<h6 class = "card-subtitle mb-2 text-muted">' + answer[0] + '</h6>' +
@@ -86,7 +123,7 @@ $(document).ready(function(){
             '</div>\n</div>');
         }
         else {
-          $("#skip-solution-box").append(
+          $("#SBS-solution-box").append(
             '<div class = "solution card" style="width: 18rem;">\n<div class = "card-body">' +
             '<h5 class = "card-title">' + 'Step ' + step + ' </h5>' + '\n' +
             '<h6 class = "card-subtitle mb-2 text-muted">' + answer[i + 1] + '</h6>' +
@@ -96,6 +133,10 @@ $(document).ready(function(){
         }
         index += 3;
         step += 1;
+
+        $("#divide-sbs").hide();
+        $("#divide-skip").html('Clear');
+        $("#divide-skip").attr('id', 'clear');
       }
     });
   });

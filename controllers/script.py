@@ -72,11 +72,11 @@ def restoringDivision(Q, M, A):
     while (count):
 
         # Printing the values at every step
-        print ("Step:", len(M)-count, end = '')
+        #print ("Step:", len(M)-count, end = '')
 
         # Step1: Left Shift, assigning LSB of Q
         # to MSB of A.
-        print (' Left Shift and Subtract: ', end = '')
+        print ('Left Shift and Subtract: ', end = '')
         A = A[1:] + Q[0]
 
         # Step2: Subtract the Divisor from A

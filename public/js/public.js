@@ -1,90 +1,51 @@
-
-function filter_array(test_array) {
-    var index = -1,
-        arr_length = test_array ? test_array.length : 0,
-        resIndex = -1,
-        result = [];
-
-    while (++index < arr_length) {
-        var value = test_array[index];
-
-        if (value) {
-            result[++resIndex] = value;
-        }
-    }
-
-    return result;
-}
-
+var index = 0;
+var limit = 0;
+var answer = [];
 $(document).ready(function(){
-    var first_pass = true
-    var iter = 0
-    var filtered = []
+  $("#divide-sbs").click(function(){
+    i = index;
+    console.log(index)
+    var dividend = $("#dividend").val();
+    var divisor = $("#divisor").val();
 
-    $("#divide-sbs").click(function(){
-        var dividend = $("#dividend").val();
-        var divisor = $("#divisor").val();
-        
-        
+    if(i == 0) {
+      $.get('/divide', {dividend: dividend, divisor: divisor}, function(result){
+        answer = result;
+        $("#SBS-solution-box").append(
+          '<div class = "solution">\n' +
+          '<div>' + answer[i] + '</div>' + '\n' +
+          '<div>' + answer[i + 1] + '</div>' + '\n' +
+          '<div>' + answer[i + 2] + '</div>' + '\n' +
+          '<div>' + answer[i + 3] + '</div>' + '\n' +
+          '</div>');
+        });
+    }
+    else if(answer.length - 1 < index + 3) {
+      $(".solution").remove();
+      $("#SBS-solution-box").append(
+        '<div class = "solution">\n' +
+        '<div>' + answer[0] + '</div>' + '\n' +
+        '<div>' + answer[i + 1] + '</div>' + '\n' +
+        '</div>');
+    }
+    else {
+      $(".solution").remove();
+      $("#SBS-solution-box").append(
+        '<div class = "solution">\n' +
+        '<div>' + answer[0] + '</div>' + '\n' +
+        '<div>' + answer[i + 1] + '</div>' + '\n' +
+        '<div>' + answer[i + 2] + '</div>' + '\n' +
+        '<div>' + answer[i + 3] + '</div>' + '\n' +
+        '</div>');
+    }
+    $("#divide-sbs").html('Next');
+    index += 3;
+  });
 
-        if(first_pass == true){
-            var resd = $.ajax({
-                type: 'GET',       
-                url: "/divide",
-                data: {dividend: dividend, divisor: divisor} ,
-                dataType: 'text',
-                context: document.body,
-                global: false,
-                async:false,
-                success: function(data) {
-                    return data;
-                }
-            }).responseText;
-
-            resd = resd.split("\n");
-            filtered = filter_array(resd);
-
-            $("#SBS-solution-box").append(
-                "<pre>" + filtered[0] + "<br><br>" + "</pre>");
-                first_pass = false;
-                
-            iter = 1
-        } else {
-            console.log(iter)
-        }
-        
-        $("#divide-sbs").html('Next');
-        //change the element id of step-by-step to next-step
-    });
-
-    $("#divide-skip").click(function(){
-        var dividend = $("#dividend").val();
-        var divisor = $("#divisor").val();
-        
-        
-
-        if(first_pass == true){
-            var resd = $.ajax({
-                type: 'GET',       
-                url: "/divide",
-                data: {dividend: dividend, divisor: divisor} ,
-                dataType: 'text',
-                context: document.body,
-                global: false,
-                async:false,
-                success: function(data) {
-                    return data;
-                }
-            }).responseText;
-
-
-            $("#SBS-solution-box").append(
-                "<pre>" + resd + "</pre>");
-                first_pass = false;
-                
-            iter = 1
-        } else {
-            console.log(iter)
-        }
-    });
+  $("#divide-skip").click(function(){
+    console.log("hello")
+    var dividend = $("#dividend").val();
+    var divisor = $("#divisor").val();
+    console.log(divisor);
+  });
 });

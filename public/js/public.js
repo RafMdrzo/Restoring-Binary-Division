@@ -58,9 +58,33 @@ $(document).ready(function(){
     });
 
     $("#divide-skip").click(function(){
-        console.log("hello")
         var dividend = $("#dividend").val();
         var divisor = $("#divisor").val();
-        console.log(divisor);
+        
+        
+
+        if(first_pass == true){
+            var resd = $.ajax({
+                type: 'GET',       
+                url: "/divide",
+                data: {dividend: dividend, divisor: divisor} ,
+                dataType: 'text',
+                context: document.body,
+                global: false,
+                async:false,
+                success: function(data) {
+                    return data;
+                }
+            }).responseText;
+
+
+            $("#SBS-solution-box").append(
+                "<pre>" + resd + "</pre>");
+                first_pass = false;
+                
+            iter = 1
+        } else {
+            console.log(iter)
+        }
     });
 });

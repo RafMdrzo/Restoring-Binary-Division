@@ -6,6 +6,8 @@ const divisionController = {
     var dividend = req.query.dividend
     var divisor = req.query.divisor
     var answer = [];
+    pyshell = new PythonShell('./controllers/script.py');
+
     pyshell.send(JSON.stringify([dividend,divisor]));
 
     pyshell.on('message', function (message) {

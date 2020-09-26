@@ -20,7 +20,6 @@ const divisionController = {
       };
       console.log(answer)
       res.send(answer);
-      console.log('finished');
     });
   }
 }

@@ -51,7 +51,6 @@ $(document).ready(function(){
           '<div class = "solution card bg-light">\n' +
           '<div class="card-header">Answer</div>' + '\n' +
           '<div class = "card-body">' +
-          '<h5 class = "card-title">' + answer[0] + '</h5>' +
           '<p class = "card-text">' + answer[i + 1] + '</p>' + '\n' +
           '<p class = "card-text">' + answer[i + 2] + '</p>' + '\n' +
           '</div>\n</div>');
@@ -159,7 +158,6 @@ $(document).ready(function(){
               '<div class = "solution card bg-light">\n' +
               '<div class="card-header">Answer</div>' + '\n' +
               '<div class = "card-body">' +
-              '<h5 class = "card-title">' + answer[0] + '</h5>' +
               '<p class = "card-text">' + answer[i + 1] + '</p>' + '\n' +
               '<p class = "card-text">' + answer[i + 2] + '</p>' + '\n' +
               '</div>\n</div>');

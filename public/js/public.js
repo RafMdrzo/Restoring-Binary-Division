@@ -9,8 +9,9 @@ $(document).ready(function(){
     i = index;
     var dividend = $("#dividend").val();
     var divisor = $("#divisor").val();
+    var check = binary(divisor, dividend);
 
-    if(dividend.length == divisor.length) {
+    if(dividend.length == divisor.length && check) {
       if(counter % 3 == 0) {
         row += 1;
         $("#SBS-solution-box").append(
@@ -82,7 +83,12 @@ $(document).ready(function(){
       step += 1;
     }
     else {
-      alert("Unequal number of bits. Please enter an equal number of bits for both dividend and divisor.");
+      if(!check) {
+        alert("Input is not a binary number. Please enter a number in binary.");
+      }
+      else if(dividend.length != divisor.length) {
+        alert("Unequal number of bits. Please enter an equal number of bits for both dividend and divisor.");
+      }
     }
   });
 
@@ -113,7 +119,9 @@ $(document).ready(function(){
     var dividend = $("#dividend").val();
     var divisor = $("#divisor").val();
 
-    if(dividend.length == divisor.length) {
+    var check = binary(divisor, dividend);
+
+    if(dividend.length == divisor.length && check) {
       $("#dividend").attr('disabled', 'true');
       $("#divisor").attr('disabled', 'true');
 
@@ -195,7 +203,12 @@ $(document).ready(function(){
       });
     }
     else {
-      alert("Unequal number of bits. Please enter an equal number of bits for both dividend and divisor.");
+      if(!check) {
+        alert("Input is not a binary number. Please enter a number in binary.");
+      }
+      else if(dividend.length != divisor.length) {
+        alert("Unequal number of bits. Please enter an equal number of bits for both dividend and divisor.");
+      }
     }
   });
 });
@@ -211,4 +224,14 @@ function check(){
     $("#divide-sbs").removeAttr('disabled');
     $("#divide-skip").removeAttr('disabled');
   }
+};
+
+function binary(divisor, dividend){
+  for(i = 0; i < dividend.length; i++)
+    if(dividend.charAt(i) != '0' && dividend.charAt(i) != '1')
+      return false;
+  for(i = 0; i < divisor.length; i++)
+    if(divisor.charAt(i) != '0' && divisor.charAt(i) != '1')
+      return false;
+  return true;
 };

@@ -33,7 +33,7 @@ $(document).ready(function(){
             '</div>\n</div>\n</div>');
 
             index += 2;
-            i = index;
+            i = 2;
 
           $(".row" + row).append(
             '<div class = "solution card bg-light">\n' +
@@ -227,11 +227,11 @@ function check(){
 };
 
 function binary(divisor, dividend){
-  for(i = 0; i < dividend.length; i++)
-    if(dividend.charAt(i) != '0' && dividend.charAt(i) != '1')
+  for(let x = 0; x < dividend.length; x++)
+    if(dividend.charAt(x) != '0' && dividend.charAt(x) != '1')
       return false;
-  for(i = 0; i < divisor.length; i++)
-    if(divisor.charAt(i) != '0' && divisor.charAt(i) != '1')
+  for(let x = 0; x < divisor.length; x++)
+    if(divisor.charAt(x) != '0' && divisor.charAt(x) != '1')
       return false;
   return true;
 };

@@ -99,6 +99,8 @@ $(document).ready(function(){
     $(".page-header").remove();
     $(".card-deck").remove();
     $("#divide-sbs").show();
+    $("#dividend").removeAttr('disabled');
+    $("#divisor").removeAttr('disabled');
     $("#divide-sbs").removeAttr('disabled');
     $("#divide-sbs").html('Step-by-step');
     $("#clear").html('Skip to Final Answer');
@@ -113,6 +115,9 @@ $(document).ready(function(){
     var divisor = $("#divisor").val();
 
     if(dividend.length == divisor.length) {
+      $("#dividend").attr('disabled', 'true');
+      $("#divisor").attr('disabled', 'true');
+
       $.get('/divide', {dividend: dividend, divisor: divisor}, function(result){
         answer = result;
 

@@ -105,6 +105,8 @@ $(document).ready(function(){
     answer.length = 0;
     i = 0;
 
+    $("#skip-solution-box").empty();
+    $("#SBS-solution-box").empty();
     $(".solution").remove();
     $(".page-header").remove();
     $(".card-deck").remove();

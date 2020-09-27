@@ -196,3 +196,16 @@ $(document).ready(function(){
     }
   });
 });
+
+function check(){
+  var dividend = $("#dividend").val();
+  var divisor = $("#divisor").val();
+  if(dividend == "" || divisor == "") {
+    $("#divide-sbs").attr('disabled', 'true');
+    $("#divide-skip").attr('disabled', 'true');
+  }
+  else {
+    $("#divide-sbs").removeAttr('disabled');
+    $("#divide-skip").removeAttr('disabled');
+  }
+};

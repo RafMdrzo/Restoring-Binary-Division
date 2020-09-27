@@ -25,10 +25,10 @@
   </center>
 
   <center class="container" id="div-op">
-    <input type="text" placeholder="Dividend" class="form-control" id="dividend" maxlength="16"><br>
-    <input type = "text" placeholder = "Divisor" class="form-control" id="divisor" maxlength="16"><br>
-    <button type="button" class="btn btn-outline-secondary" id="divide-sbs" >Step-by-Step</button>
-    <button type="button" class="btn btn-outline-secondary" id="divide-skip">Skip to Final Answer</button>
+    <input type="text" placeholder="Dividend" class="form-control" id="dividend" maxlength="16" onkeyup="check()" ><br>
+    <input type = "text" placeholder = "Divisor" class="form-control" id="divisor" maxlength="16" onkeyup="check()" ><br>
+    <button type="button" class="btn btn-outline-secondary" id="divide-sbs" disabled>Step-by-Step</button>
+    <button type="button" class="btn btn-outline-secondary" id="divide-skip" disabled>Skip to Final Answer</button>
     <br>
     <br>
   </center>

@@ -11,7 +11,9 @@ $(document).ready(function(){
     var divisor = $("#divisor").val();
     var check = binary(divisor, dividend);
 
-    if(dividend.length == divisor.length && check) {
+    if(dividend.length > 0 && divisor.length > 0 && dividend.length == divisor.length && check) {
+      $("#dividend").attr('disabled', 'true');
+      $("#divisor").attr('disabled', 'true');
       if(counter % 3 == 0) {
         row += 1;
         $("#SBS-solution-box").append(
@@ -86,6 +88,9 @@ $(document).ready(function(){
       if(!check) {
         alert("Input is not a binary number. Please enter a number in binary.");
       }
+      else if(dividend.length == 0 || divisor.length == 0) {
+        alert("Please enter a binary number.")
+      }
       else if(dividend.length != divisor.length) {
         alert("Unequal number of bits. Please enter an equal number of bits for both dividend and divisor.");
       }
@@ -106,12 +111,13 @@ $(document).ready(function(){
     $("#divide-sbs").show();
     $("#dividend").removeAttr('disabled');
     $("#divisor").removeAttr('disabled');
-    $("#divide-sbs").removeAttr('disabled');
     $("#divide-sbs").html('Step-by-step');
     $("#clear").html('Skip to Final Answer');
     $("#clear").attr('id', 'divide-skip');
     $("#dividend").val('');
     $("#divisor").val('');
+    $("#divide-sbs").attr('disabled', 'true');
+    $("#divide-skip").attr('disabled', 'true');
   });
 
   $(document).on('click', '#divide-skip', function(e){
@@ -121,7 +127,7 @@ $(document).ready(function(){
 
     var check = binary(divisor, dividend);
 
-    if(dividend.length == divisor.length && check) {
+    if(dividend.length > 0 && divisor.length > 0 && dividend.length == divisor.length && check) {
       $("#dividend").attr('disabled', 'true');
       $("#divisor").attr('disabled', 'true');
 
@@ -205,6 +211,9 @@ $(document).ready(function(){
     else {
       if(!check) {
         alert("Input is not a binary number. Please enter a number in binary.");
+      }
+      else if(dividend.length == 0 || divisor.length == 0) {
+        alert("Please enter a binary number.")
       }
       else if(dividend.length != divisor.length) {
         alert("Unequal number of bits. Please enter an equal number of bits for both dividend and divisor.");

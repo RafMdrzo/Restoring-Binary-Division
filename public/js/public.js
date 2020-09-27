@@ -18,34 +18,31 @@ $(document).ready(function(){
         '<div class="card-deck row' + row + '"></div><br>');
       }
       if(index == 0) {
-        $.get('/divide', {dividend: dividend, divisor: divisor}, function(result){
-          answer = result;
-          $("center.container").append(
-            '<div class = "page-header"><h1>Solution</h1></div>');
-          $(".row" + row).append(
-            '<div class = "solution card bg-light">\n' +
-            '<div class = "card-header">Initialization</div>' + '\n' +
-            '<div class = "card-body">' +
-            '<h5 class = "card-title">Q gets dividend. M gets divisor. A is 0.</h5>' +
-            '<p class = "card-text">' + answer[0] + '</p>' + '\n' +
-            '<p class = "card-text">' + answer[1] + '</p>' + '\n' +
-            '<p class = "card-text">' + answer[2] + '</p>' + '\n' +
-            '</div>\n</div>\n</div>');
+        $("center.container").append(
+          '<div class = "page-header"><h1>Solution</h1></div>');
+        $(".row" + row).append(
+          '<div class = "solution card bg-light">\n' +
+          '<div class = "card-header">Initialization</div>' + '\n' +
+          '<div class = "card-body">' +
+          '<h5 class = "card-title">Q gets dividend. M gets divisor. A is 0.</h5>' +
+          '<p class = "card-text">' + answer[0] + '</p>' + '\n' +
+          '<p class = "card-text">' + answer[1] + '</p>' + '\n' +
+          '<p class = "card-text">' + answer[2] + '</p>' + '\n' +
+          '</div>\n</div>\n</div>');
 
-            index += 2;
-            i = index;
+          index += 2;
+          i = index;
 
-          $(".row" + row).append(
-            '<div class = "solution card bg-light">\n' +
-            '<div class="card-header">' + 'Step ' + 1 + ' </div>' + '\n' +
-            '<div class = "card-body">' +
-            '<h5 class = "card-title">' + answer[i + 1] + '</h5>' +
-            '<p class = "card-text">' + answer[i + 2] + '</p>' + '\n' +
-            '<p class = "card-text">' + answer[i + 3] + '</p>' + '\n' +
-            '</div>\n</div>\n</div>');
+        $(".row" + row).append(
+          '<div class = "solution card bg-light">\n' +
+          '<div class="card-header">' + 'Step ' + 1 + ' </div>' + '\n' +
+          '<div class = "card-body">' +
+          '<h5 class = "card-title">' + answer[i + 1] + '</h5>' +
+          '<p class = "card-text">' + answer[i + 2] + '</p>' + '\n' +
+          '<p class = "card-text">' + answer[i + 3] + '</p>' + '\n' +
+          '</div>\n</div>\n</div>');
 
-            counter += 2;
-        });
+          counter += 2;
       }
       else if(answer.length - 1 < index + 3) {
         $(".row" + row).append(
